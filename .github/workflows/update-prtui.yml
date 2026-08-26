@@ -16,12 +16,21 @@ jobs:
     name: Regenerate the formula
     runs-on: ubuntu-latest
     steps:
+      - name: Mint a token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: app
+        with:
+          app-id: ${{ secrets.TALE_APP_ID }}
+          private-key: ${{ secrets.TALE_APP_PRIVATE_KEY }}
+
       - name: Checkout tap
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ steps.app.outputs.token }}
 
       - name: Build the formula from the latest release
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app.outputs.token }}
         run: |
           set -euo pipefail
 
@@ -94,6 +103,9 @@ jobs:
           RUBY
 
       - name: Commit when the formula moved
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          SLUG: ${{ steps.app.outputs.app-slug }}
         run: |
           set -euo pipefail
 
@@ -104,7 +116,11 @@ jobs:
 
           version=$(sed -n 's/^  version "\(.*\)"$/\1/p' Formula/prtui.rb)
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # GitHub only attributes a commit to the app when the address carries
+          # the bot account's own numeric id, which is not the app id.
+          bot_id=$(gh api "/users/$SLUG[bot]" --jq .id)
+
+          git config user.name "$SLUG[bot]"
+          git config user.email "$bot_id+$SLUG[bot]@users.noreply.github.com"
           git commit -qam "prtui $version"
           git push
