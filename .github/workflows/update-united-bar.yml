@@ -69,7 +69,7 @@ jobs:
               skip "Rolling release; the upstream release workflow updates this cask"
             end
 
-            depends_on macos: ">= :sonoma"
+            depends_on macos: :sonoma
             depends_on arch: :arm64
 
             app "UnitedBar.app"
