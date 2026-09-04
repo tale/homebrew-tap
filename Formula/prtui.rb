@@ -2,7 +2,7 @@
 class Prtui < Formula
   desc "Terminal UI for reviewing GitHub pull requests"
   homepage "https://github.com/tale/prtui"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   depends_on "gh"
@@ -16,23 +16,23 @@ class Prtui < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/tale/prtui/releases/download/v0.2.0/prtui-v0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "b8e4d828d15b4d268163810934f1c22f36257e7a4ffe413555ed7691af2478dd"
+      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-aarch64-apple-darwin.tar.gz"
+      sha256 "37e6527a47464e52c45d4df54aa741df42eaf45a7c560c93542cb78aaa416981"
     end
     on_intel do
-      url "https://github.com/tale/prtui/releases/download/v0.2.0/prtui-v0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "51c0bdf7316b98aa95bd66296e5dc91b1233cb63ad1af8ab7d75d4e59f9639c9"
+      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-x86_64-apple-darwin.tar.gz"
+      sha256 "f6b262e9adf08d3295de10149d27a544b759890184628280e02f760f7e6b06aa"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tale/prtui/releases/download/v0.2.0/prtui-v0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5fafb757b7e79c783d87cb9dfcabdf4cb5291d66f5596c5a90b8d786c768790d"
+      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b142d10f233c3458009aa7d073149cbe9b02af0baec50bd5318dc9e0bdc6f267"
     end
     on_intel do
-      url "https://github.com/tale/prtui/releases/download/v0.2.0/prtui-v0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f8010816602d96ef929cae680f2a12bfc6aa2b1358f532670c83e14b2a2e780b"
+      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3426467d9a482b0696f9d9e0d700a29250edc6a49015762f0d41a458a419c7d5"
     end
   end
 
