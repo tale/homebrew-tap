@@ -38,13 +38,13 @@ class Prtui < Formula
 
   def install
     if build.head?
-      system "cargo", "install", *std_cargo_args
+      system "cargo", "install", *std_cargo_args(path: "crates/prtui")
     else
       bin.install "prtui"
     end
   end
 
   test do
-    assert_match "prtui #{version}", shell_output("#{bin}/prtui --version")
+    assert_match(/\Aprtui \d+\.\d+\.\d+/, shell_output("#{bin}/prtui --version"))
   end
 end
