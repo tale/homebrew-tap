@@ -2,7 +2,7 @@
 class Prtui < Formula
   desc "Terminal UI for reviewing GitHub and GitLab changes"
   homepage "https://github.com/tale/prtui"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   # The repo is public now, so HEAD needs no key: plain HTTPS works
@@ -14,23 +14,23 @@ class Prtui < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-aarch64-apple-darwin.tar.gz"
-      sha256 "37e6527a47464e52c45d4df54aa741df42eaf45a7c560c93542cb78aaa416981"
+      url "https://github.com/tale/prtui/releases/download/v0.4.0/prtui-v0.4.0-aarch64-apple-darwin.tar.gz"
+      sha256 "2b4b92163eb420073b79096bf2ba81da16de5ebfa78404ca854ea47946a93024"
     end
     on_intel do
-      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-x86_64-apple-darwin.tar.gz"
-      sha256 "f6b262e9adf08d3295de10149d27a544b759890184628280e02f760f7e6b06aa"
+      url "https://github.com/tale/prtui/releases/download/v0.4.0/prtui-v0.4.0-x86_64-apple-darwin.tar.gz"
+      sha256 "682dff285e0da041cd3d400b313e88b5e4c5a9f2ded759b7b122fb7506d71a33"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b142d10f233c3458009aa7d073149cbe9b02af0baec50bd5318dc9e0bdc6f267"
+      url "https://github.com/tale/prtui/releases/download/v0.4.0/prtui-v0.4.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1f64fa8301d6fe6310b98eaec9b045e2f9b193c3f0ab2bdaf68ddb2372337cb2"
     end
     on_intel do
-      url "https://github.com/tale/prtui/releases/download/v0.3.0/prtui-v0.3.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3426467d9a482b0696f9d9e0d700a29250edc6a49015762f0d41a458a419c7d5"
+      url "https://github.com/tale/prtui/releases/download/v0.4.0/prtui-v0.4.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2d8607558390b9d67676e8e8991a834463cb82fae773a63abd28f3380e389f32"
     end
   end
 
